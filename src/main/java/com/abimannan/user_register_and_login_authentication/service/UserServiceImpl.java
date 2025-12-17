@@ -4,7 +4,7 @@ import com.abimannan.user_register_and_login_authentication.repository.UserRepos
 import com.abimannan.user_register_and_login_authentication.model.User;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+
 @Service
 public class UserServiceImpl implements UserService{
 
