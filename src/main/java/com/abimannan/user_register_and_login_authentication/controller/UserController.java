@@ -29,13 +29,14 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public String register(@RequestBody RegisterRequest request){
+    public AuthResponse  register(@RequestBody RegisterRequest request){
         User  user= new User();
         user.setName(request.getName());
         user.setEmail(request.getEmail());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         userService.save(user);
-        return "Register User successful";
+        String generatedToken = jwtUtil.generateToken(request.getEmail());
+        return new AuthResponse(generatedToken);
     }
 
     @PostMapping("/login")

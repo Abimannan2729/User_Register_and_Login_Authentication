@@ -29,7 +29,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
 
-                // 🔥 DISABLE default login & basic auth
+                //  DISABLE default login & basic auth
                 .formLogin(form -> form.disable())
                 .httpBasic(basic -> basic.disable())
 
